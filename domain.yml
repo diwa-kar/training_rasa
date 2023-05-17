@@ -37,7 +37,7 @@ slots:
     influence_conversation: true
     mappings:
     - type: from_entity
-      entity: ticket_type
+      entity: hardware_type
 
     
   monitor_inches:
