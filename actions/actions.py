@@ -37,12 +37,12 @@ class QpmcTicketRaise(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        hardware_type = tracker.get_slot("hardware_type")
-
         ticket_type = tracker.get_slot("ticket_type")
+        
+        hardware_type = tracker.get_slot("hardware_type")
         
         monitor_inches = tracker.get_slot("monitor_inches")
 
-        dispatcher.utter_message(text=f"ticket raise action is working fine {hardware_type} {ticket_type} {monitor_inches}")
+        dispatcher.utter_message(text=f"ticket raise action is working fine {ticket_type} {hardware_type} {monitor_inches}")
 
         return []
