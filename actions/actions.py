@@ -28,10 +28,10 @@ from rasa_sdk.executor import CollectingDispatcher
 
 
 
-class QpmcTicketRaise(Action):
+class QpmcTicketRaiseMonitor(Action):
 
     def name(self) -> Text:
-        return "Qpmc_ticket_raise_action"
+        return "Qpmc_ticket_raise_monitor_action"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -44,5 +44,22 @@ class QpmcTicketRaise(Action):
         monitor_inches = tracker.get_slot("monitor_inches")
 
         dispatcher.utter_message(text=f"ticket raise action is working fine {ticket_type} {hardware_type} {monitor_inches}")
+
+        return []
+    
+class QpmcTicketRaise(Action):
+
+    def name(self) -> Text:
+        return "Qpmc_ticket_raise_action"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        ticket_type = tracker.get_slot("ticket_type")
+        
+        hardware_type = tracker.get_slot("hardware_type")
+
+        dispatcher.utter_message(text=f"ticket raise action is working fine {ticket_type} {hardware_type}")
 
         return []

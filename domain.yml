@@ -8,10 +8,13 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  
   - Qpmc_ticket_raise_intent
+  - Qpmc_ticket_raise_monitor_intent
 
 actions:
   - Qpmc_ticket_raise_action
+  - Qpmc_ticket_raise_monitor_action
 
 entities:
 
